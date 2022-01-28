@@ -12,9 +12,9 @@ TagManager:
   - 
   - Water
   - UI
-  - nonSelfCollision
-  - 
-  - 
+  - Ragdoll
+  - Non Ragdoll Collision
+  - Ragdoll AI
   - 
   - 
   - 

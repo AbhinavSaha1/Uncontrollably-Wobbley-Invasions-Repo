@@ -4,70 +4,60 @@ using UnityEngine;
 
 public class Grab : MonoBehaviour
 {
-    public Animator animator;
-    GameObject grabbedObj;
-    public Rigidbody rb;
-    public int isLeftorRight;
-    public bool alreadyGrabbing = false;
-    
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+	public Animator animator;
+	private Item _grabbedItem;
+	[SerializeField] private Rigidbody _rigidbody;
+	public int isLeftorRight;
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(isLeftorRight))
-        {
-            if(isLeftorRight == 0)
-            {
-                animator.SetBool("Left hand  grab", true);
-            }
-            else if (isLeftorRight == 1)
-            {
-                Debug.Log("Active");
-                animator.SetBool("Right hand grab", true);
-            }
+	private bool _canGrab;
 
-            if (grabbedObj != null)
-            {
-                FixedJoint fj = grabbedObj.AddComponent<FixedJoint>();
-                if (fj != null) Debug.Log("Joint added");
-                fj.connectedBody = rb;
-                fj.breakForce = 9000;
-            }
-            else Debug.Log("No grabbed object");
-            
-        } 
-        else if (Input.GetMouseButtonUp(isLeftorRight))
-        {
-            if (isLeftorRight == 0)
-            {
-                animator.SetBool("Left hand  grab", false);
-            }
-            else if (isLeftorRight == 1)
-            {
-                animator.SetBool("Right hand grab", false);
-            }
+	private void Start()
+	{
+		this._rigidbody = this.GetComponent<Rigidbody>();
+	}
 
-            if(grabbedObj != null)
-            {
-                Destroy(grabbedObj.GetComponent<FixedJoint>());
-            }
-            grabbedObj = null;
-        }
-    }
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Item"))
-        {
-            grabbedObj = other.gameObject;
-            if (grabbedObj != null) Debug.Log("grabbed" + grabbedObj.name);
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        grabbedObj = null;
-    }
+	private void Update()
+	{
+		if (Input.GetMouseButtonDown(this.isLeftorRight))
+		{
+			if (this.isLeftorRight == 0)
+			{
+				this.animator.SetBool("Left hand  grab", true);
+			}
+			else if (this.isLeftorRight == 1)
+			{
+				this.animator.SetBool("Right hand grab", true);
+			}
+
+			this._canGrab = true;
+		}
+		else if (Input.GetMouseButtonUp(this.isLeftorRight))
+		{
+			if (this.isLeftorRight == 0)
+			{
+				this.animator.SetBool("Left hand  grab", false);
+			}
+			else if (this.isLeftorRight == 1)
+			{
+				this.animator.SetBool("Right hand grab", false);
+			}
+
+			if (this._grabbedItem != null)
+			{
+				this._grabbedItem.Release();
+
+				this._grabbedItem = null;
+			}
+
+			this._canGrab = false;
+		}
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (this._canGrab && this._grabbedItem == null && other.TryGetComponent<Item>(out this._grabbedItem))
+		{
+			this._grabbedItem.PickUp(this._rigidbody);
+		}
+	}
 }
