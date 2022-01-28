@@ -34,7 +34,7 @@ public class Grab : MonoBehaviour
                 FixedJoint fj = grabbedObj.AddComponent<FixedJoint>();
                 if (fj != null) Debug.Log("Joint added");
                 fj.connectedBody = rb;
-                fj.breakForce = Mathf.Infinity;
+                fj.breakForce = 9000;
             }
             else Debug.Log("No grabbed object");
             
