@@ -12,6 +12,11 @@ public class LimbCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        playerController.isGrounded = true;
+        if(collision.gameObject.tag == "Ground")
+        {
+            playerController.isGrounded = true;
+            Debug.Log("Grounded = true");
+        }
+
     }
 }
