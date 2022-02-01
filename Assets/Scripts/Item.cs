@@ -10,13 +10,14 @@ public class Item : MonoBehaviour
 	public int _Layer => this._layer;
 
 	private int _defaultLayer;
+	[SerializeField] private int _breakForce;
 
 	public void PickUp(Rigidbody rigidbody)
 	{
 		if (this._FixedJoint == null)
 		{
 			this._FixedJoint = this.gameObject.AddComponent<FixedJoint>();
-			this._FixedJoint.breakForce = 9000;
+			this._FixedJoint.breakForce = _breakForce;
 			this._FixedJoint.connectedBody = rigidbody;
 
 			this.gameObject.layer = this._layer;
