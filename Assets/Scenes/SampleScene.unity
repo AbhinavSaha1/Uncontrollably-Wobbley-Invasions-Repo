@@ -8271,9 +8271,19 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 5416534514733795507}
+    - target: {fileID: 3805869886038033840, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 5416534514733795507}
     - target: {fileID: 3805869886038033845, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
       propertyPath: animator
+      value: 
+      objectReference: {fileID: 5416534514733795507}
+    - target: {fileID: 3805869886038033845, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: _animator
       value: 
       objectReference: {fileID: 5416534514733795507}
     m_RemovedComponents: []

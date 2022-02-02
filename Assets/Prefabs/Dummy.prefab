@@ -1480,9 +1480,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c00177583cf0f498e66beed56d8e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  _rigidbody: {fileID: 0}
-  isLeftorRight: 1
+  _rigidbody: {fileID: 3529428602047053545}
+  _animator: {fileID: 0}
+  _animationTriggerName: Right hand grab
+  _inputActionReference: {fileID: -7530324230008905494, guid: f30735cd86ee45a4cb78c3b48a3afb01,
+    type: 3}
 --- !u!1 &3529428602307866178
 GameObject:
   m_ObjectHideFlags: 0
@@ -3434,9 +3436,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c00177583cf0f498e66beed56d8e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  _rigidbody: {fileID: 0}
-  isLeftorRight: 0
+  _rigidbody: {fileID: 3529428603421569967}
+  _animator: {fileID: 0}
+  _animationTriggerName: Left hand  grab
+  _inputActionReference: {fileID: -4815682407662584081, guid: f30735cd86ee45a4cb78c3b48a3afb01,
+    type: 3}
 --- !u!1 &3529428603505990470
 GameObject:
   m_ObjectHideFlags: 0

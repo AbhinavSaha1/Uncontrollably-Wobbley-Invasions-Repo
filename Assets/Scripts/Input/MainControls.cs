@@ -189,7 +189,7 @@ public partial class @MainControls : IInputActionCollection2, IDisposable
                     ""id"": ""a5e50f90-17ff-4c87-aedf-ccf1ac36a0db"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""ScaleVector2(x=0.05,y=0.05)"",
                     ""groups"": """",
                     ""action"": ""Move Secondary"",
                     ""isComposite"": false,
