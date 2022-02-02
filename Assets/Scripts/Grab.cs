@@ -1,46 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Grab : MonoBehaviour
 {
-	public Animator animator;
-	private Item _grabbedItem;
 	[SerializeField] private Rigidbody _rigidbody;
-	public int isLeftorRight;
+	public Rigidbody _Rigidbody => this._rigidbody;
 
+	[SerializeField] private Animator _animator;
+	public Animator _Animator => this._animator;
+
+	[SerializeField] private string _animationTriggerName = "Left hand  grab";
+	public string _AnimationTriggerName => this._animationTriggerName;
+
+	[SerializeField] private InputActionReference _inputActionReference;
+	public InputActionReference _InputActionReference => this._inputActionReference;
+
+	private Item _grabbedItem;
 	private bool _canGrab;
-
-	private void Start()
-	{
-		this._rigidbody = this.GetComponent<Rigidbody>();
-	}
 
 	private void Update()
 	{
-		if (Input.GetMouseButtonDown(this.isLeftorRight))
+		if (this._inputActionReference.action.WasPressedThisFrame())
 		{
-			if (this.isLeftorRight == 0)
-			{
-				this.animator.SetBool("Left hand  grab", true);
-			}
-			else if (this.isLeftorRight == 1)
-			{
-				this.animator.SetBool("Right hand grab", true);
-			}
+			this._animator.SetBool(this._animationTriggerName, true);
 
 			this._canGrab = true;
 		}
-		else if (Input.GetMouseButtonUp(this.isLeftorRight))
+		else if (this._inputActionReference.action.WasReleasedThisFrame())
 		{
-			if (this.isLeftorRight == 0)
-			{
-				this.animator.SetBool("Left hand  grab", false);
-			}
-			else if (this.isLeftorRight == 1)
-			{
-				this.animator.SetBool("Right hand grab", false);
-			}
+			this._animator.SetBool(this._animationTriggerName, false);
 
 			if (this._grabbedItem != null)
 			{
@@ -60,4 +50,22 @@ public class Grab : MonoBehaviour
 			this._grabbedItem.PickUp(this._rigidbody);
 		}
 	}
+
+	private void OnEnable()
+	{
+		this._inputActionReference.action.Enable();
+	}
+
+	private void OnDisable()
+	{
+		this._inputActionReference.action.Disable();
+	}
+
+#if UNITY_EDITOR
+	private void Reset()
+	{
+		this._rigidbody = this.GetComponent<Rigidbody>();
+		this._animator = this.GetComponent<Animator>();
+	}
+#endif
 }
