@@ -1140,6 +1140,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
+--- !u!1 &563654877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3529428602769590174, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+    type: 3}
+  m_PrefabInstance: {fileID: 3805869886342192187}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &563654879
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563654877}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
+--- !u!136 &563654880
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563654877}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 3.0979257
+  m_Direction: 1
+  m_Center: {x: 0, y: -1.0489628, z: 0}
+--- !u!114 &563654881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563654877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c7d1911f6a3e34ba9628c5f00b76e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  chaseDist: 5
+  turnSpeed: 500
+  attackDist: 5
+  state: 0
 --- !u!1 &635891608 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1291220557000481683, guid: 770c78e35fc27624e8ee8064156e8f38,
@@ -5759,7 +5812,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh17444
+=======
+  m_Name: pb_Mesh19160
+>>>>>>> main
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7473,7 +7530,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17352
+  m_Name: pb_Mesh19078
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8673,6 +8730,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 300095079065322204, guid: bf2d20696a6385d4d9f95e91efdb2fb3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf2d20696a6385d4d9f95e91efdb2fb3, type: 3}
@@ -10028,6 +10090,11 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3529428601736574488, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.05102079
+      objectReference: {fileID: 0}
     - target: {fileID: 3529428601736574491, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
       propertyPath: m_IsKinematic
@@ -10042,6 +10109,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529428601780269115, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.01581715
       objectReference: {fileID: 0}
     - target: {fileID: 3529428601780269116, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
@@ -10058,6 +10130,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c4f30d8b6e94d4b4296f4c404b19bc0f, type: 2}
+    - target: {fileID: 3529428601807709270, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.05278437
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529428601808395098, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.5372557
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529428601808395098, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.09826127
+      objectReference: {fileID: 0}
     - target: {fileID: 3529428601808395101, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
       propertyPath: m_IsKinematic
@@ -10067,6 +10154,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529428601819249951, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.3680092
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529428602047053334, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.52527434
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529428602047053334, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -1.0403241
       objectReference: {fileID: 0}
     - target: {fileID: 3529428602047053545, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
@@ -10083,11 +10185,26 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3529428602434587099, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.040657055
+      objectReference: {fileID: 0}
     - target: {fileID: 3529428602434587100, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e1bcf9a042ef0b249ba08fcef926df4f, type: 2}
+    - target: {fileID: 3529428602492919496, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.0043912837
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529428602492919496, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.051016863
+      objectReference: {fileID: 0}
     - target: {fileID: 3529428602492919499, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
       propertyPath: m_IsKinematic
@@ -10102,6 +10219,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529428602650826835, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.25399995
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529428602650826835, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.3680092
       objectReference: {fileID: 0}
     - target: {fileID: 3529428602650826836, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
@@ -10121,7 +10248,11 @@ PrefabInstance:
     - target: {fileID: 3529428602769590161, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: -9.03
+=======
+      value: -8.959
+>>>>>>> main
       objectReference: {fileID: 0}
     - target: {fileID: 3529428602769590161, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
@@ -10173,6 +10304,11 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3529428602917361581, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -9.387045
+      objectReference: {fileID: 0}
     - target: {fileID: 3529428602917361582, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -10183,10 +10319,25 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3529428602951439209, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.5042554
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529428602951439209, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.09826127
+      objectReference: {fileID: 0}
     - target: {fileID: 3529428603075338504, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529428603075338505, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.013770236
       objectReference: {fileID: 0}
     - target: {fileID: 3529428603075338506, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
@@ -10203,15 +10354,35 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3529428603153833935, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.7600008
+      objectReference: {fileID: 0}
     - target: {fileID: 3529428603421569953, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c4f30d8b6e94d4b4296f4c404b19bc0f, type: 2}
+    - target: {fileID: 3529428603421569964, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.52527463
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529428603421569964, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.9201084
+      objectReference: {fileID: 0}
     - target: {fileID: 3529428603421569967, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529428603505990488, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.8820007
       objectReference: {fileID: 0}
     - target: {fileID: 3529428603505990491, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
@@ -10228,9 +10399,19 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 5416534514733795507}
+    - target: {fileID: 3805869886038033840, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 5416534514733795507}
     - target: {fileID: 3805869886038033845, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
         type: 3}
       propertyPath: animator
+      value: 
+      objectReference: {fileID: 5416534514733795507}
+    - target: {fileID: 3805869886038033845, guid: cc60528f62e8bc245ad8a2d8ca3a4aab,
+        type: 3}
+      propertyPath: _animator
       value: 
       objectReference: {fileID: 5416534514733795507}
     m_RemovedComponents: []

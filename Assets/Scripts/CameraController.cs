@@ -4,32 +4,51 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float rotationSpeed = 1;
-    public Transform root;
-    float mouseX, mouseY;
-    public float stomachOffset;
-    public ConfigurableJoint hipJoint, stomachJoint;
-    // Start is called before the first frame update
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
+	public float rotationSpeed = 1;
+	public Transform root;
+	private float mouseX, mouseY;
+	public float stomachOffset;
+	public ConfigurableJoint hipJoint, stomachJoint;
 
-    
-    void FixedUpdate()
-    {
-        CamControl();
-    }
-    void CamControl()
-    {
-        mouseX += Input.GetAxis("Mouse X") * rotationSpeed;
-        mouseY -= Input.GetAxis("Mouse Y") * rotationSpeed;
-        mouseY = Mathf.Clamp(mouseY, -35, 60);
+	private void FixedUpdate()
+	{
+		this.CamControl();
+	}
 
-        Quaternion rootRotation = Quaternion.Euler(mouseY, mouseX, 0);
-        root.rotation = rootRotation;
+	private void CamControl()
+	{
+		Vector2 cameraDelta = this._inputActions.Player.MoveSecondary.ReadValue<Vector2>();
 
-        hipJoint.targetRotation = Quaternion.Euler(0, -mouseX, 0);
-        stomachJoint.targetRotation = Quaternion.Euler(-mouseY + stomachOffset, 0, 0);
-    }
+		this.mouseX += cameraDelta.x * this.rotationSpeed;
+		this.mouseY -= cameraDelta.y * this.rotationSpeed;
+		this.mouseY = Mathf.Clamp(this.mouseY, -35, 60);
+
+		Quaternion rootRotation = Quaternion.Euler(this.mouseY, this.mouseX, 0);
+		this.root.rotation = rootRotation;
+
+		this.hipJoint.targetRotation = Quaternion.Euler(0, -this.mouseX, 0);
+		this.stomachJoint.targetRotation = Quaternion.Euler(-this.mouseY + this.stomachOffset, 0, 0);
+	}
+
+	private MainControls _inputActions;
+
+	private void Awake()
+	{
+		this._inputActions = new MainControls();
+	}
+
+	private void Start()
+	{
+		Cursor.lockState = CursorLockMode.Locked;
+	}
+
+	private void OnEnable()
+	{
+		this._inputActions.Enable();
+	}
+
+	private void OnDisable()
+	{
+		this._inputActions.Disable();
+	}
 }
