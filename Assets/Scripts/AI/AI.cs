@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class AI : MonoBehaviour
 {
-	//[SerializeField] private float _activationRadius = 5.0f;
-	//public float _ActivationRadius => this._activationRadius;
+	[SerializeField] private float _activationRadius = 5.0f;
+	public float _ActivationRadius => this._activationRadius;
 
 	[SerializeField] private Collider _collider;
 	public Collider _Collider => this._collider;
@@ -22,6 +22,9 @@ public class AI : MonoBehaviour
 	[SerializeField] private float _behaviourTickDeltaTime = 0.25f;
 	public float _BehaviourTickDeltaTime => this._behaviourTickDeltaTime;
 
+	[SerializeField] private Rigidbody[] _bodyParts;
+	public Rigidbody[] _BodyParts => this._bodyParts;
+
 	private Transform _target;
 
 	private IEnumerator BehaviourTickProcess()
@@ -33,6 +36,21 @@ public class AI : MonoBehaviour
 			this._navMeshAgent.SetDestination(target: this._target.position);
 
 			yield return waitForSeconds;
+
+			if (Vector3.Distance(this._target.position, this.transform.position) < this._activationRadius)
+			{
+				for (int a = 0; a < this._bodyParts.Length; a++)
+				{
+					this._bodyParts[a].isKinematic = false;
+				}
+			}
+			else
+			{
+				for (int a = 0; a < this._bodyParts.Length; a++)
+				{
+					this._bodyParts[a].isKinematic = true;
+				}
+			}
 		}
 	}
 
@@ -55,13 +73,13 @@ public class AI : MonoBehaviour
 		this._collider = this.GetComponent<Collider>();
 	}
 
-	//private void OnDrawGizmosSelected()
-	//{
-	//	Gizmos.color = Color.white;
-	//	Gizmos.DrawWireSphere(
-	//		center: this.transform.position,
-	//		radius: this._activationRadius
-	//	);
-	//}
+	private void OnDrawGizmosSelected()
+	{
+		Gizmos.color = Color.white;
+		Gizmos.DrawWireSphere(
+			center: this.transform.position,
+			radius: this._activationRadius
+		);
+	}
 #endif
 }

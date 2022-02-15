@@ -3749,7 +3749,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 20.69
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4087473564935639493
 MonoBehaviour:
@@ -3763,12 +3763,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2624d63b87d6b2740ba48b1534b0d5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _activationRadius: 4
   _collider: {fileID: 4087473564935639492}
   _activationLayerMask:
     serializedVersion: 2
     m_Bits: 2147483648
-  _navMeshAgent: {fileID: 0}
+  _navMeshAgent: {fileID: 3805869886342192189}
   _behaviourTickDeltaTime: 0.25
+  _bodyParts:
+  - {fileID: 3529428601667629534}
+  - {fileID: 3529428603153833934}
+  - {fileID: 3529428603505990491}
+  - {fileID: 3529428602917361580}
+  - {fileID: 3529428602951439208}
+  - {fileID: 3529428601808395101}
+  - {fileID: 3529428602434587098}
+  - {fileID: 3529428601780269114}
+  - {fileID: 3529428603421569967}
+  - {fileID: 3529428602047053545}
+  - {fileID: 3529428602650826834}
+  - {fileID: 3529428601819249950}
+  - {fileID: 3529428601736574491}
+  - {fileID: 3529428602492919499}
+  - {fileID: 3529428601807709225}
+  - {fileID: 3529428603075338504}
 --- !u!54 &4365036350616816230
 Rigidbody:
   m_ObjectHideFlags: 0
